@@ -4,19 +4,19 @@ const bodyparser = require("body-parser");
 const user = require("./app/routes/user");
 const Blogs = require("./app/routes/blog");
 const videos = require("./app/routes/video");
-// const cors = require("cors")
+const cors = require("cors")
 
  const app = Express(); 
  const port = 8000; 
 
-// const corsOptions = {
-//     link: '*',
-//     // origin: 'http://127.0.0.1:5501/',
-//   };
+const corsOptions = {
+    link: '*',
+    origin: 'http://127.0.0.1:5501/',
+  };
 
  app.use(bodyparser.urlencoded({ extended: true }))
  app.use(bodyparser.json());
-//  app.use(cors(corsOptions));
+ app.use(cors(corsOptions));
 
 
 app.use("/User", user);
