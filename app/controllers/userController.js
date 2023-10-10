@@ -25,7 +25,7 @@ exports.login = async (req, res) => {
     if(pass !== targetUser.password)return res.status(401).json({message:'password incorrect'})
 
 
-      res.status(200).json({ message: 'Login successful', user });
+      res.status(200).json({ message: 'Login successful', targetUser });
     } catch (error){
       res.status(500).json({ message: 'Login failed!', error });
     }

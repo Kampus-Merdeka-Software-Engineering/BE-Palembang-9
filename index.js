@@ -10,8 +10,8 @@ const cors = require("cors")
  const port = 8000; 
 
 const corsOptions = {
-    link: '*',
-    origin: 'http://127.0.0.1:5501/',
+    link: 'http://127.0.0.1:5501/'
+    // origin: 'http://127.0.0.1:5501/',
   };
 
  app.use(bodyparser.urlencoded({ extended: true }))
