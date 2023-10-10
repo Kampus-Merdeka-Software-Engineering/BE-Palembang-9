@@ -13,7 +13,7 @@ const cors = require("cors")
 
 const corsOptions = {
     link: '*',
-    origin: 'http://127.0.0.1:5501/',
+    origin: 'http://127.0.0.1/',
     methods: 'GET, PUT, POST, PATCH, DELETE'
   };
 
