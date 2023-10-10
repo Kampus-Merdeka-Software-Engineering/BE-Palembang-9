@@ -14,13 +14,15 @@ exports.register = async (req, res) => {
 exports.login = async (req, res) => {
 
   try {
-    const {username, password } = req.body;
-     
 
-    const user = await User.findOne ({where: {username}});
+    const {user, pass} = req.body;
+
+    const username = user;
+    const targetUser = await User.findOne ({where: {username}});
+    console.log(targetUser);
   
-    if(!user) return res.status(401).json({message:'username is incorrect'})
-    if(password !== user.password)return res.status(401).json({message:'password incorrect'})
+    if(!targetUser) return res.status(401).json({message:'username is incorrect'})
+    if(pass !== targetUser.password)return res.status(401).json({message:'password incorrect'})
 
 
       res.status(200).json({ message: 'Login successful', user });
